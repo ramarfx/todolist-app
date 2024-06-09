@@ -38,8 +38,8 @@ const Home = () => {
   return (
     <>
       <div className="w-full min-h-screen flex justify-center items-center">
-        <div className="flex md:max-h-[90vh] overflow-hidden flex-col-reverse md:flex-row relative">
-          <div className="max-w-screen-xl min-w-96 border flex min-h-96 items-center flex-col p-5">
+        <div className="flex md:max-h-[90vh] px-4 md:px-0 mx-auto overflow-hidden flex-col-reverse md:flex-row relative">
+          <div className="max-w-screen-sm md:min-w-96 border flex min-h-96 items-center flex-col p-5">
             <h1 className="font-bold text-3xl">Todo List App</h1>
 
             <div className="flex w-full mt-5 justify-between items-center">
@@ -55,13 +55,13 @@ const Home = () => {
               {tasks.length > 0 ? (
                 tasks.map((task) => (
                   <div
-                    className="group px-2 py-1 flex justify-between items-center border w-full"
+                    className="group px-2 py-1 flex justify-between items-center gap-2 border w-full"
                     key={task.id}>
-                    <div>
+                    <div className="flex-1">
                       <h1 className="font-medium">{task.title}</h1>
                       <h1 className="text-sm">{task.description}</h1>
                     </div>
-                    <button onClick={() => handleDelete(task.id)}>
+                    <button onClick={() => handleDelete(task.id)} className="size-4">
                       <img
                         src={minus}
                         alt="minus"
